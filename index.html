@@ -267,6 +267,41 @@
             color: var(--text-light);
             line-height: 1.6;
             margin-top: 0.75rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .publication .abstract.expanded {
+            max-height: 500px;
+            transition: max-height 0.4s ease-in;
+        }
+
+        .publication .toggle-abstract {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            background: none;
+            padding: 0.25rem 0;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .publication .toggle-abstract:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .publication .toggle-abstract::after {
+            content: ' ▼';
+            font-size: 0.8rem;
+        }
+
+        .publication .toggle-abstract.expanded::after {
+            content: ' ▲';
         }
 
         .publication .links {
@@ -425,12 +460,11 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="hero-content">
-            <img src="GabrielAbeyie-20250510--052.JPG" alt="Dr. Gabriel Appau Abeyie" class="profile-photo">
+            <img src="profile-photo.jpg" alt="Dr. Gabriel Appau Abeyie" class="profile-photo">
             <div>
                 <h1>Dr. Gabriel A. Abeyie</h1>
                 <div class="title">Assistant Professor of Economics</div>
-                <div class="affiliation">Cameron School of Business | Department of Economics and Finance</div>
-                <div class="affiliation">University of North Carolina Wilmington</div>
+                <div class="affiliation">Cameron School of Business | Department of Econ & Fin | UNCW</div>
             </div>
             <div class="links">
                 <a href="/cdn-cgi/l/email-protection#167774736f7f7371566378756138737263">Email</a>
@@ -448,22 +482,16 @@
         <div class="container">
             <h2>About</h2>
             <div class="about-content">
-                <p>Gabriel Abeyie is an Assistant Professor of Economics in the Cameron School of Business at the University of North Carolina Wilmington. He earned his Ph.D. in Economics from the University of Tennessee, Knoxville. Dr. Abeyie's research focuses on macroeconomics and forecasting, with an emphasis on Bayesian methods, text-based analysis, and the use of high-dimensional data.</p>
+                <p>Gabriel Abeyie is an Assistant Professor of Economics in the Cameron School of Business at the University of North Carolina Wilmington. Dr. Abeyie's research focuses on macroeconomics and forecasting, with an emphasis on Bayesian methods, text-based analysis, and the use of high-dimensional data.</p>
                 
                 <p>His work seeks to address timely policy-relevant questions through empirical, data-driven approaches. He is particularly interested in understanding how information is processed in financial and commodity markets, and how expectations shape macroeconomic outcomes.</p>
-
-                <p>In the classroom, Dr. Abeyie is passionate about making economics accessible and engaging. He strives to help students develop strong analytical thinking skills and apply economic reasoning to real-world issues. Originally from Ghana, Dr. Abeyie brings an international perspective to both his research and teaching. Outside of work, he enjoys watching soccer and spending time with family.</p>
             </div>
 
             <h3>Research Interests</h3>
             <div class="research-interests">
                 <span>Macroeconomics</span>
                 <span>Forecasting</span>
-                <span>Bayesian Methods</span>
                 <span>Text-Based Analysis</span>
-                <span>High-Dimensional Data</span>
-                <span>Energy Markets</span>
-                <span>Market Microstructure</span>
                 <span>Financial Econometrics</span>
             </div>
         </div>
@@ -480,6 +508,7 @@
                 <h4>Beyond News Headlines and TF-IDF: Enhancing Text-Based Forecasting Models with Validated Collocations and Improved Attention</h4>
                 <div class="authors">Gabriel Appau Abeyie</div>
                 <div class="venue">International Journal of Forecasting (Forthcoming)</div>
+                <button class="toggle-abstract">Read Abstract</button>
                 <div class="abstract">
                     This paper enhances text-based forecasting models by incorporating validated collocations and improved attention mechanisms, moving beyond traditional TF-IDF approaches to better capture the semantic content of news articles for economic forecasting.
                 </div>
@@ -493,6 +522,7 @@
             <div class="publication">
                 <h4>When Do Markets React? Heterogeneous Timing in Oil Market Efficiency</h4>
                 <div class="authors">Gabriel Appau Abeyie</div>
+                <button class="toggle-abstract">Read Abstract</button>
                 <div class="abstract">
                     This paper analyzes heterogeneous timing patterns in oil market reactions to EIA inventory announcements using high-frequency data from 2012-2024. I develop a novel three-regime classification system (FAST, NORMAL, SLOW) and show that NORMAL regime reactions exhibit the strongest surprise-return relationships (R² = 15.5%). The findings reveal that recent regime history dominates prediction over surprise characteristics, suggesting time-varying market efficiency driven by strategic trading behavior and rational inattention.
                 </div>
@@ -504,6 +534,7 @@
             <div class="publication">
                 <h4>Identifying OPEC News Shocks: The Impact of OPEC Announcements Using Textual Data</h4>
                 <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read Abstract</button>
                 <div class="abstract">
                     This paper uses textual analysis to identify and measure the impact of OPEC news shocks on oil markets and the broader economy, developing novel methods to extract information from OPEC announcements and communications.
                 </div>
@@ -517,6 +548,7 @@
             <div class="publication">
                 <h4>Welfare Implications of Bubble Cycles</h4>
                 <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read Abstract</button>
                 <div class="abstract">
                     This research examines the welfare consequences of asset price bubble cycles, analyzing how boom-bust patterns in asset markets affect economic efficiency and social welfare.
                 </div>
@@ -525,6 +557,7 @@
             <div class="publication">
                 <h4>Forecasting Crude Oil Price Returns: A Principal Weighted-Elastic Net (PW-EN) Approach</h4>
                 <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read Abstract</button>
                 <div class="abstract">
                     This paper develops a novel forecasting methodology combining principal component analysis with weighted elastic net regularization to improve crude oil price return predictions using high-dimensional predictor sets.
                 </div>
@@ -634,7 +667,7 @@
         <p>&copy; 2025 Gabriel Appau Abeyie | Last updated: December 2024</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Hamburger Menu Toggle
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
@@ -656,9 +689,29 @@
         // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
+                                hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
+        });
+
+        // Collapsible Abstracts
+        const toggleButtons = document.querySelectorAll('.toggle-abstract');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const abstract = button.nextElementSibling;
+                const isExpanded = abstract.classList.contains('expanded');
+                
+                if (isExpanded) {
+                    abstract.classList.remove('expanded');
+                    button.classList.remove('expanded');
+                    button.textContent = 'Read Abstract';
+                } else {
+                    abstract.classList.add('expanded');
+                    button.classList.add('expanded');
+                    button.textContent = 'Hide Abstract';
+                }
+            });
         });
     </script>
 
