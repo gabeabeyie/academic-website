@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Gabriel Appau Abeyie - Economics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #006272;
+            --secondary-color: #007888;
+            --accent-color: #00a8b8;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --bg-light: #f0f9fa;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 6rem 2rem 4rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero .title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .affiliation {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.85;
+        }
+
+        .hero .links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero .links a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid var(--white);
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .hero .links a:hover {
+            background: var(--white);
+            color: var(--primary-color);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 2rem auto;
+            font-size: 1.125rem;
+            line-height: 1.8;
+        }
+
+        .research-interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .research-interests span {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.95rem;
+        }
+
+        /* Publications */
+        .publication {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .publication:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .publication h4 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .authors {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .publication .venue {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+        }
+
+        .publication .abstract {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-top: 0.75rem;
+        }
+
+        .publication .links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication .links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .publication .links a:hover {
+            border-bottom-color: var(--secondary-color);
+        }
+
+        /* Teaching */
+        .course {
+            background: var(--white);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .course h4 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .course .course-code {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-item .icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .contact-item a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .title {
+                font-size: 1.125rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">Dr. Gabriel Appau Abeyie</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#teaching">Teaching</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <img src="profile-photo.jpg" alt="Dr. Gabriel Appau Abeyie" class="profile-photo">
+            <div>
+                <h1>Dr. Gabriel Appau Abeyie</h1>
+                <div class="title">Assistant Professor of Economics</div>
+                <div class="affiliation">Cameron School of Business | Department of Economics | UNCW</div>
+            </div>
+            <div class="links">
+                <a href="/cdn-cgi/l/email-protection#167774736f7f7371566378756138737263">Email</a>
+                <a href="https://raw.githubusercontent.com/gabeabeyie/cv/main/Gabriel_abeyie_cv.pdf" target="_blank">CV</a>
+                <a href="https://orcid.org/0009-0005-0006-528X" target="_blank">ORCID</a>
+                <a href="https://github.com/gabeabeyie" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/gabrielabeyie" target="_blank">LinkedIn</a>
+                <a href="https://bsky.app/profile/gabeyie.bsky.social" target="_blank">BlueSky</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About</h2>
+            <div class="about-content">
+                <p>Gabriel Abeyie is an Assistant Professor of Economics in the Cameron School of Business at the University of North Carolina Wilmington. He earned his Ph.D. in Economics from the University of Tennessee, Knoxville. Dr. Abeyie's research focuses on macroeconomics and forecasting, with an emphasis on Bayesian methods, text-based analysis, and the use of high-dimensional data.</p>
+                
+                <p>His work seeks to address timely policy-relevant questions through empirical, data-driven approaches. He is particularly interested in understanding how information is processed in financial and commodity markets, and how expectations shape macroeconomic outcomes.</p>
+
+                <p>In the classroom, Dr. Abeyie is passionate about making economics accessible and engaging. He strives to help students develop strong analytical thinking skills and apply economic reasoning to real-world issues. Originally from Ghana, Dr. Abeyie brings an international perspective to both his research and teaching. Outside of work, he enjoys watching soccer and spending time with family.</p>
+            </div>
+
+            <h3>Research Interests</h3>
+            <div class="research-interests">
+                <span>Macroeconomics</span>
+                <span>Forecasting</span>
+                <span>Bayesian Methods</span>
+                <span>Text-Based Analysis</span>
+                <span>High-Dimensional Data</span>
+                <span>Energy Markets</span>
+                <span>Market Microstructure</span>
+                <span>Financial Econometrics</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research">
+        <div class="container">
+            <h2>Research</h2>
+
+            <h3>Publications</h3>
+
+            <div class="publication">
+                <h4>Beyond News Headlines and TF-IDF: Enhancing Text-Based Forecasting Models with Validated Collocations and Improved Attention</h4>
+                <div class="authors">Gabriel Appau Abeyie</div>
+                <div class="venue">International Journal of Forecasting (Forthcoming)</div>
+                <div class="abstract">
+                    This paper enhances text-based forecasting models by incorporating validated collocations and improved attention mechanisms, moving beyond traditional TF-IDF approaches to better capture the semantic content of news articles for economic forecasting.
+                </div>
+                <div class="links">
+                    <a href="https://raw.githubusercontent.com/gabeabeyie/cv/main/Gabriel_abeyie_cv.pdf" target="_blank">CV for Details</a>
+                </div>
+            </div>
+
+            <h3>Working Papers</h3>
+            
+            <div class="publication">
+                <h4>When Do Markets React? Heterogeneous Timing in Oil Market Efficiency</h4>
+                <div class="authors">Gabriel Appau Abeyie</div>
+                <div class="abstract">
+                    This paper analyzes heterogeneous timing patterns in oil market reactions to EIA inventory announcements using high-frequency data from 2012-2024. I develop a novel three-regime classification system (FAST, NORMAL, SLOW) and show that NORMAL regime reactions exhibit the strongest surprise-return relationships (R² = 15.5%). The findings reveal that recent regime history dominates prediction over surprise characteristics, suggesting time-varying market efficiency driven by strategic trading behavior and rational inattention.
+                </div>
+                <div class="links">
+                    <a href="#">Draft Available Upon Request</a>
+                </div>
+            </div>
+
+            <div class="publication">
+                <h4>Identifying OPEC News Shocks: The Impact of OPEC Announcements Using Textual Data</h4>
+                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <div class="abstract">
+                    This paper uses textual analysis to identify and measure the impact of OPEC news shocks on oil markets and the broader economy, developing novel methods to extract information from OPEC announcements and communications.
+                </div>
+                <div class="links">
+                    <a href="#">Draft Available Upon Request</a>
+                </div>
+            </div>
+
+            <h3>Work in Progress</h3>
+
+            <div class="publication">
+                <h4>Welfare Implications of Bubble Cycles</h4>
+                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <div class="abstract">
+                    This research examines the welfare consequences of asset price bubble cycles, analyzing how boom-bust patterns in asset markets affect economic efficiency and social welfare.
+                </div>
+            </div>
+
+            <div class="publication">
+                <h4>Forecasting Crude Oil Price Returns: A Principal Weighted-Elastic Net (PW-EN) Approach</h4>
+                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
+                <div class="abstract">
+                    This paper develops a novel forecasting methodology combining principal component analysis with weighted elastic net regularization to improve crude oil price return predictions using high-dimensional predictor sets.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Section -->
+    <section id="teaching">
+        <div class="container">
+            <h2>Teaching</h2>
+
+            <h3>Current Courses</h3>
+
+            <div class="course">
+                <h4>Principles of Macroeconomics</h4>
+                <div class="course-code">ECN 222 | <a href="#" target="_blank">Sample Syllabus</a></div>
+                <p>Introductory macroeconomic theory covering national income determination, monetary and fiscal policy, economic growth, and international trade.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Fall 2024:</strong> Section 004 (43 students) | Section 006 (65 students)<br>
+                <strong>Evaluation:</strong> [Score] / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+            </div>
+
+            <div class="course">
+                <h4>Intermediate Macroeconomics</h4>
+                <div class="course-code">ECN 322 | <a href="#" target="_blank">Sample Syllabus</a></div>
+                <p>Advanced treatment of macroeconomic theory, including models of economic growth, business cycles, unemployment, and inflation.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Spring 2025:</strong> Section [XXX] ([XX] students)<br>
+                <strong>Evaluation:</strong> [Score] / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+            </div>
+
+            <div class="course">
+                <h4>Advanced Open Economy Macroeconomics</h4>
+                <div class="course-code">ECN 432 | <a href="#" target="_blank">Sample Syllabus</a></div>
+                <p>Advanced analysis of international macroeconomic theory, including exchange rate determination, international capital flows, and global policy coordination.</p>
+                
+                <p style="margin-top: 1rem;"><strong>Fall 2024:</strong> Section [XXX] ([XX] students)<br>
+                <strong>Evaluation:</strong> [Score] / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+            </div>
+
+            <h3>Teaching Philosophy</h3>
+            <p style="margin-top: 1rem; line-height: 1.8;">
+                I am passionate about making economics accessible and engaging. I strive to help students develop strong analytical thinking skills and apply economic reasoning to real-world issues. My goal is to create an inclusive learning environment where all students can thrive and develop a deep understanding of economic principles.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">📧</div>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="/cdn-cgi/l/email-protection#bbdad9dec2d2dedcfbced5d8cc95dedfce"><span class="__cf_email__" data-cfemail="88e9eaedf1e1edefc8fde6ebffa6edecfd">[email&#160;protected]</span></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📞</div>
+                    <div>
+                        <strong>Phone</strong><br>
+                        <a href="tel:910-962-3510">910-962-3510</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🏢</div>
+                    <div>
+                        <strong>Office</strong><br>
+                        Cameron Hall, Room 220-O<br>
+                        <a href="https://uncw.edu/academics/colleges/csb/departments-schools/economics-finance/faculty-staff" target="_blank">Department of Economics & Finance</a><br>
+                        Cameron School of Business
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">📍</div>
+                    <div>
+                        <strong>Mailing Address</strong><br>
+                        UNC Wilmington<br>
+                        601 S. College Road<br>
+                        Wilmington, NC 28403
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🌐</div>
+                    <div>
+                        <strong>Institution</strong><br>
+                        <a href="https://uncw.edu/" target="_blank">University of North Carolina Wilmington</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">🕐</div>
+                    <div>
+                        <strong>Office Hours</strong><br>
+                        By appointment<br>
+                        <a href="/cdn-cgi/l/email-protection#6c0d0e091505090b2c19020f1b42090819">Email to schedule</a>
+                    </div>
+        
