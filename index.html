@@ -3,475 +3,759 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Dr. Gabriel Appau Abeyie - Economics Professor at UNCW</title>
-    <meta name="description" content="Gabriel Appau Abeyie is an Assistant Professor of Economics at the University of North Carolina Wilmington specializing in macroeconomics, forecasting, and energy markets.">
-    <meta name="keywords" content="Gabriel Abeyie, Economics Professor, UNCW, Macroeconomics, Forecasting, Energy Markets, Oil Markets, Bayesian Methods, Text-Based Analysis">
+
+    <title>Gabriel A. Abeyie — Economics, UNC Wilmington</title>
+    <meta name="description" content="Gabriel A. Abeyie is an Assistant Professor of Economics at UNC Wilmington studying how economic narratives shape markets and the macroeconomy.">
     <meta name="author" content="Gabriel Appau Abeyie">
-    
-    <!-- Open Graph / Facebook -->
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gabeabeyie.github.io/academic-website/">
-    <meta property="og:title" content="Dr. Gabriel Appau Abeyie - Economics Professor">
-    <meta property="og:description" content="Assistant Professor of Economics at UNCW specializing in macroeconomics, forecasting, and energy markets.">
-    <meta property="og:image" content="https://gabeabeyie.github.io/academic-website/GabrielAbeyie-20250510--052.JPG">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://gabeabeyie.github.io/academic-website/">
-    <meta property="twitter:title" content="Dr. Gabriel Appau Abeyie - Economics Professor">
-    <meta property="twitter:description" content="Assistant Professor of Economics at UNCW specializing in macroeconomics, forecasting, and energy markets.">
-    <meta property="twitter:image" content="https://gabeabeyie.github.io/academic-website/profile-photo.jpg">
-    
-    <!-- Favicon -->
+    <meta property="og:title" content="Gabriel A. Abeyie — Economics, UNC Wilmington">
+    <meta property="og:description" content="Assistant Professor of Economics. Narrative economics, text-as-data, energy markets.">
+    <meta property="og:image" content="https://gabeabeyie.github.io/academic-website/GabrielAbeyie-20250510--053.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gabriel A. Abeyie — Economics, UNC Wilmington">
+    <meta name="twitter:description" content="Assistant Professor of Economics. Narrative economics, text-as-data, energy markets.">
+
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg:            #f6efe1;
+            --bg-deep:       #ede4d1;
+            --rule:          #c8bca0;
+            --rule-soft:     #ddd3bb;
+            --ink:           #1d1916;
+            --ink-2:         #4a4338;
+            --ink-3:         #7a7062;
+            --accent:        #8b1a2b;
+            --accent-deep:   #6c1421;
+
+            --serif: 'Source Serif 4', 'Iowan Old Style', 'Charter', Georgia, 'Times New Roman', serif;
+            --sans:  'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
-        :root {
-            --primary-color: #006272;
-            --secondary-color: #007888;
-            --accent-color: #00a8b8;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f0f9fa;
-            --white: #ffffff;
-        }
+        *,
+        *::before,
+        *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
+            font-family: var(--serif);
+            font-feature-settings: "kern", "liga", "onum";
+            font-optical-sizing: auto;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.55;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
+        ::selection { background: var(--accent); color: var(--bg); }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { color: var(--accent-deep); text-decoration: underline; text-underline-offset: 3px; }
+
+        /* ── Navigation ──────────────────────────────────────────── */
+        nav.bar {
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
+            z-index: 100;
+            background: rgba(246, 239, 225, 0.92);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--rule);
         }
-
-        nav .container {
-            max-width: 1200px;
+        nav.bar .inner {
+            max-width: 1180px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0.85rem 2rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
-        }
-
-        nav .logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
+            align-items: baseline;
             gap: 2rem;
         }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
+        nav.bar .nameplate {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-style: italic;
+            font-size: 1.05rem;
+            letter-spacing: 0.005em;
+            color: var(--ink);
+        }
+        nav.bar ul {
+            list-style: none;
+            display: flex;
+            gap: 1.75rem;
+        }
+        nav.bar ul a {
+            font-family: var(--sans);
+            font-size: 0.78rem;
             font-weight: 500;
-            transition: color 0.3s;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-2);
         }
+        nav.bar ul a:hover { color: var(--accent); text-decoration: none; }
 
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            z-index: 1001;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background-color: var(--primary-color);
-            transition: all 0.3s;
-            border-radius: 3px;
-        }
-
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            padding: 6rem 2rem 4rem;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .profile-photo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--white);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-
-        .hero .title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .hero .affiliation {
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-            opacity: 0.85;
-        }
-
-        .hero .links {
-            display: flex;
-            gap: 1.5rem;
             justify-content: center;
-            flex-wrap: wrap;
+            gap: 5px;
+            width: 28px;
+            height: 28px;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
-
-        .hero .links a {
-            color: var(--white);
-            text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid var(--white);
-            border-radius: 50px;
-            transition: all 0.3s;
-            font-weight: 500;
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 1.5px;
+            background: var(--ink);
+            transition: transform 0.25s, opacity 0.25s;
         }
+        .hamburger.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
-        .hero .links a:hover {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-
-        /* Main Container */
-        .container {
-            max-width: 1200px;
+        /* ── Layout shell ────────────────────────────────────────── */
+        .shell {
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        /* Section Styling */
-        section {
-            padding: 4rem 2rem;
+        /* ── Hero / masthead ─────────────────────────────────────── */
+        .hero {
+            padding: 4.5rem 2rem 5rem;
+            border-bottom: 1px solid var(--rule);
         }
-
-        section:nth-child(even) {
-            background-color: var(--bg-light);
+        .hero .grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+            gap: 4rem;
+            align-items: start;
         }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-color);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        /* About Section */
-        .about-content {
-            max-width: 900px;
-            margin: 2rem auto;
-            font-size: 1.125rem;
-            line-height: 1.8;
-        }
-
-        .research-interests {
+        .eyebrow {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            margin-bottom: 1.75rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 2rem;
+            align-items: center;
+            gap: 0.85rem;
         }
-
-        .research-interests span {
-            background: var(--secondary-color);
-            color: var(--white);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.95rem;
+        .eyebrow::before {
+            content: "";
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: var(--accent);
         }
-
-        /* Publications */
-        .publication {
-            background: var(--white);
-            padding: 1.5rem;
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 400;
+            font-size: clamp(2.1rem, 4.4vw, 3.5rem);
+            line-height: 1.08;
+            letter-spacing: -0.015em;
+            color: var(--ink);
             margin-bottom: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-wrap: balance;
         }
-
-        .publication:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        .hero h1 em {
+            font-style: italic;
+            color: var(--accent);
         }
-
-        .publication h4 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+        .hero .affiliation {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--ink-2);
+            margin-bottom: 0.4rem;
         }
-
-        .publication .authors {
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
+        .hero .affiliation-line-2 {
+            font-family: var(--serif);
+            font-size: 1.05rem;
+            color: var(--ink-2);
+            margin-bottom: 2.5rem;
+        }
+        .hero .recent {
+            font-family: var(--serif);
+            font-size: 1rem;
+            color: var(--ink-2);
+            padding: 1rem 0 1rem 1.25rem;
+            border-left: 2px solid var(--accent);
+            margin-bottom: 2.25rem;
+            background: linear-gradient(90deg, rgba(139, 26, 43, 0.04), transparent 70%);
+        }
+        .hero .recent .tag {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+        .hero .recent .venue {
             font-style: italic;
         }
 
-        .publication .venue {
-            color: var(--text-dark);
-            font-weight: 500;
-            margin-bottom: 0.75rem;
-        }
-
-        .publication .abstract {
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-top: 0.75rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-        }
-
-        .publication .abstract.expanded {
-            max-height: 500px;
-            transition: max-height 0.4s ease-in;
-        }
-
-        .publication .toggle-abstract {
-            display: inline-block;
-            margin-top: 0.75rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-            cursor: pointer;
-            border: none;
-            background: none;
-            padding: 0.25rem 0;
-            font-size: 0.95rem;
-            transition: color 0.3s;
-        }
-
-        .publication .toggle-abstract:hover {
-            color: var(--accent-color);
-            text-decoration: underline;
-        }
-
-        .publication .toggle-abstract::after {
-            content: ' ▼';
-            font-size: 0.8rem;
-        }
-
-        .publication .toggle-abstract.expanded::after {
-            content: ' ▲';
-        }
-
-        .publication .links {
-            margin-top: 1rem;
+        .profile-links {
+            list-style: none;
             display: flex;
-            gap: 1rem;
             flex-wrap: wrap;
-        }
-
-        .publication .links a {
-            color: var(--secondary-color);
-            text-decoration: none;
+            gap: 0;
+            font-family: var(--sans);
+            font-size: 0.78rem;
             font-weight: 500;
-            padding: 0.25rem 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.3s;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+        .profile-links li {
+            display: flex;
+            align-items: center;
+        }
+        .profile-links li:not(:last-child)::after {
+            content: "·";
+            color: var(--ink-3);
+            margin: 0 0.85rem;
+        }
+        .profile-links a {
+            color: var(--ink-2);
+            border-bottom: 1px solid transparent;
+            padding-bottom: 1px;
+            transition: color 0.2s, border-color 0.2s;
+        }
+        .profile-links a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            text-decoration: none;
         }
 
-        .publication .links a:hover {
-            border-bottom-color: var(--secondary-color);
+        /* hero aside (photo + sparkline) */
+        .hero-aside {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 1.75rem;
+        }
+        .portrait {
+            width: 100%;
+            aspect-ratio: 1 / 1.15;
+            object-fit: cover;
+            object-position: center top;
+            display: block;
+            background: var(--bg-deep);
+            filter: grayscale(0.18) contrast(1.02);
+            box-shadow:
+                0 1px 0 var(--rule),
+                0 18px 40px -22px rgba(28, 24, 22, 0.35);
         }
 
-        /* Teaching */
-        .course {
-            background: var(--white);
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--accent-color);
+        figure.sparkline {
+            border-top: 1px solid var(--rule);
+            padding-top: 0.85rem;
+        }
+        figure.sparkline svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        figure.sparkline .axis {
+            stroke: var(--rule);
+            stroke-width: 0.5;
+            stroke-dasharray: 2 2;
+        }
+        figure.sparkline .line {
+            fill: none;
+            stroke: var(--ink);
+            stroke-width: 1;
+            stroke-linejoin: round;
+            stroke-linecap: round;
+        }
+        figure.sparkline .area {
+            fill: var(--accent);
+            opacity: 0.12;
+        }
+        figure.sparkline .peak {
+            fill: var(--accent);
+        }
+        figure.sparkline figcaption {
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            color: var(--ink-3);
+            margin-top: 0.6rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        figure.sparkline figcaption .label {
+            font-style: italic;
+            font-family: var(--serif);
+            font-size: 0.78rem;
+            letter-spacing: 0;
+            color: var(--ink-2);
         }
 
-        .course h4 {
-            font-size: 1.25rem;
-            color: var(--primary-color);
+        /* ── Section structure ───────────────────────────────────── */
+        section {
+            padding: 5rem 2rem;
+            border-bottom: 1px solid var(--rule);
+        }
+        section:nth-of-type(even) {
+            background: var(--bg-deep);
+        }
+        .section-head {
+            display: flex;
+            align-items: baseline;
+            gap: 1.25rem;
+            margin-bottom: 2.75rem;
+            padding-bottom: 0.9rem;
+            border-bottom: 1px solid var(--rule);
+        }
+        .section-head .num {
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+        }
+        .section-head h2 {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: clamp(1.85rem, 3vw, 2.4rem);
+            letter-spacing: -0.01em;
+            color: var(--ink);
+        }
+
+        h3.subhead {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            margin: 3.5rem 0 1.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--rule-soft);
+        }
+        h3.subhead:first-of-type { margin-top: 0; }
+
+        /* ── About ───────────────────────────────────────────────── */
+        .about-prose {
+            max-width: 700px;
+            font-size: 1.18rem;
+            line-height: 1.75;
+            color: var(--ink);
+        }
+        .about-prose p {
+            margin-bottom: 1.4rem;
+        }
+        .about-prose p:first-of-type::first-line {
+            font-variant-caps: small-caps;
+            letter-spacing: 0.04em;
+        }
+        .pull-quote {
+            font-family: var(--serif);
+            font-style: italic;
+            font-weight: 300;
+            font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+            line-height: 1.35;
+            color: var(--ink);
+            max-width: 720px;
+            margin: 2.5rem 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid var(--accent);
+            text-wrap: balance;
+        }
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 0.75rem;
+            margin-top: 1rem;
+            font-family: var(--sans);
+        }
+        .interests span {
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--ink-2);
+            padding: 0.4rem 0.85rem;
+            border: 1px solid var(--rule);
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 999px;
+        }
+
+        /* ── Publications: article-style ─────────────────────────── */
+        .paper {
+            padding: 2rem 0;
+            border-top: 1px solid var(--rule);
+        }
+        .paper:last-child { border-bottom: 1px solid var(--rule); }
+
+        .paper.featured {
+            padding: 2.25rem 1.75rem;
+            background: rgba(255, 255, 255, 0.42);
+            border: 1px solid var(--rule);
+            border-left: 3px solid var(--accent);
             margin-bottom: 0.5rem;
         }
 
-        .course .course-code {
-            color: var(--text-light);
+        .paper .meta {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 0.85rem;
+            font-family: var(--sans);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+        .status {
+            color: var(--accent);
+        }
+        .status.muted { color: var(--ink-3); }
+        .meta .sep {
+            color: var(--rule);
+        }
+        .meta .year {
+            color: var(--ink-3);
             font-weight: 500;
         }
 
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .paper h4 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(1.25rem, 2vw, 1.55rem);
+            line-height: 1.25;
+            letter-spacing: -0.005em;
+            color: var(--ink);
+            margin-bottom: 0.65rem;
+            text-wrap: balance;
         }
-
-        .contact-item {
+        .paper.featured h4 {
+            font-size: clamp(1.5rem, 2.4vw, 1.85rem);
+            font-weight: 700;
+        }
+        .paper .byline {
+            font-family: var(--serif);
+            font-style: italic;
+            color: var(--ink-2);
+            margin-bottom: 0.4rem;
+            font-size: 0.98rem;
+        }
+        .paper .venue {
+            font-family: var(--serif);
+            font-size: 0.98rem;
+            color: var(--ink-2);
+            margin-bottom: 1rem;
+        }
+        .paper .venue em {
+            color: var(--accent);
+        }
+        .paper .key-finding {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: var(--ink);
+            padding: 0.85rem 1.1rem;
+            background: rgba(139, 26, 43, 0.05);
+            border-left: 2px solid var(--accent);
+            margin: 1rem 0 1.25rem;
+            text-wrap: balance;
+        }
+        .paper .toggle-abstract {
+            font-family: var(--sans);
+            font-size: 0.74rem;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-2);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.4rem 0;
+            transition: color 0.2s;
+        }
+        .paper .toggle-abstract:hover { color: var(--accent); }
+        .paper .toggle-abstract::after {
+            content: " +";
+            font-weight: 400;
+            font-family: var(--serif);
+            font-size: 1rem;
+            margin-left: 0.2rem;
+        }
+        .paper .toggle-abstract.expanded::after { content: " −"; }
+        .paper .abstract {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+            opacity: 0;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            color: var(--ink-2);
+        }
+        .paper .abstract.expanded {
+            max-height: 800px;
+            opacity: 1;
+            margin: 1rem 0 0.5rem;
+            padding-left: 1.25rem;
+            border-left: 1px solid var(--rule);
+        }
+        .paper .links {
+            margin-top: 1rem;
             display: flex;
-            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0;
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .paper .links a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 1px;
+        }
+        .paper .links a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .paper .links .sep {
+            color: var(--rule);
+            margin: 0 0.85rem;
+        }
+        .paper .links .muted {
+            color: var(--ink-3);
+            border-bottom: 1px dotted var(--rule);
+            cursor: default;
+        }
+        .paper .links .muted:hover {
+            color: var(--ink-3);
+        }
+
+        /* ── Teaching ────────────────────────────────────────────── */
+        .course {
+            padding: 2rem 0;
+            border-top: 1px solid var(--rule);
+        }
+        .course:last-of-type { border-bottom: 1px solid var(--rule); }
+        .course-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
             gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
         }
-
-        .contact-item .icon {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
+        .course h4 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 1.4rem;
+            line-height: 1.25;
+            color: var(--ink);
         }
-
-        .contact-item a {
-            color: var(--secondary-color);
+        .course .code {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            color: var(--ink-3);
+        }
+        .course p.desc {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--ink-2);
+            margin-bottom: 1rem;
+            max-width: 720px;
+        }
+        .term {
+            display: grid;
+            grid-template-columns: minmax(120px, 0.4fr) minmax(0, 1fr);
+            gap: 0.75rem 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            padding: 0.75rem 0;
+            border-top: 1px dashed var(--rule-soft);
+        }
+        .term:first-of-type { border-top: none; }
+        .term .when {
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            padding-top: 2px;
+        }
+        .term .what {
+            color: var(--ink);
+        }
+        .term .what .score {
+            font-family: var(--sans);
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .term .what .pending {
+            font-family: var(--sans);
+            font-size: 0.78rem;
+            font-style: italic;
+            color: var(--ink-3);
+        }
+        .syllabus-link, .eval-link {
+            font-family: var(--sans);
+            font-size: 0.74rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--accent);
+            border-bottom: 1px solid transparent;
+        }
+        .syllabus-link:hover, .eval-link:hover {
+            border-bottom-color: var(--accent);
             text-decoration: none;
         }
 
-        .contact-item a:hover {
-            text-decoration: underline;
+        .philosophy {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--rule);
+        }
+        .philosophy p {
+            max-width: 720px;
+            font-size: 1.08rem;
+            line-height: 1.7;
+            color: var(--ink);
         }
 
-        /* Footer */
+        /* ── Contact ─────────────────────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem 3rem;
+        }
+        .contact-block {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .contact-block .label {
+            font-family: var(--sans);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 0.5rem;
+        }
+        .contact-block .value {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--ink);
+        }
+        .contact-block .value a {
+            color: var(--ink);
+            border-bottom: 1px solid var(--accent);
+        }
+        .contact-block .value a:hover {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ── Footer ──────────────────────────────────────────────── */
         footer {
-            background: var(--primary-color);
-            color: var(--white);
+            padding: 2.5rem 2rem;
             text-align: center;
-            padding: 2rem;
+            font-family: var(--sans);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-3);
+            background: var(--bg-deep);
+        }
+        footer .rule {
+            display: block;
+            width: 60px;
+            height: 1px;
+            background: var(--accent);
+            margin: 0 auto 1.25rem;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
+        /* ── Responsive ──────────────────────────────────────────── */
+        @media (max-width: 860px) {
+            .hero { padding: 3rem 1.5rem 3.5rem; }
+            .hero .grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
             }
+            .hero-aside {
+                max-width: 320px;
+                order: -1;
+            }
+            section { padding: 4rem 1.5rem; }
+        }
 
-            nav ul {
-                display: none;
+        @media (max-width: 700px) {
+            .hamburger { display: flex; }
+            nav.bar .inner { padding: 0.85rem 1.25rem; }
+            nav.bar ul {
                 position: absolute;
-                top: 70px;
+                top: 100%;
                 left: 0;
                 right: 0;
-                background: rgba(255, 255, 255, 0.98);
-                backdrop-filter: blur(10px);
+                background: var(--bg);
+                border-bottom: 1px solid var(--rule);
                 flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-                border-top: 2px solid var(--accent-color);
+                gap: 0;
+                padding: 0.5rem 1.25rem 1.25rem;
+                display: none;
             }
-
-            nav ul.active {
-                display: flex;
+            nav.bar ul.active { display: flex; }
+            nav.bar ul li {
+                padding: 0.85rem 0;
+                border-bottom: 1px solid var(--rule-soft);
             }
-
-            nav ul li {
-                text-align: center;
-                font-size: 1.125rem;
+            nav.bar ul li:last-child { border-bottom: none; }
+            .profile-links { gap: 0.5rem 0; }
+            .profile-links li:not(:last-child)::after { margin: 0 0.6rem; }
+            .interests { gap: 0.4rem 0.5rem; }
+            .paper.featured { padding: 1.5rem 1.25rem; }
+            .term {
+                grid-template-columns: 1fr;
+                gap: 0.25rem;
             }
-
-            .profile-photo {
-                width: 150px;
-                height: 150px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero .title {
-                font-size: 1.125rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-
-        /* Smooth scroll */
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">Dr. Gabriel Appau Abeyie</div>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav class="bar">
+        <div class="inner">
+            <a href="#top" class="nameplate">Gabriel A. Abeyie</a>
+            <button class="hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
             <ul id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
@@ -481,263 +765,351 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <img src="GabrielAbeyie-20250510--053.png" alt="Dr. Gabriel Appau Abeyie" class="profile-photo">
+    <header class="hero" id="top">
+        <div class="grid">
             <div>
-                <h1>Dr. Gabriel A. Abeyie</h1>
-                <div class="title">Assistant Professor of Economics</div>
-                <div class="affiliation">Cameron School of Business | Department of Economics & Finance</div>
-                <div class="affiliation">University of North Carolina Wilmington</div>
+                <div class="eyebrow">Assistant Professor of Economics</div>
+                <h1>I study how economic <em>narratives</em> shape markets and the macroeconomy.</h1>
+                <div class="affiliation">Cameron School of Business · Department of Economics &amp; Finance</div>
+                <div class="affiliation-line-2">University of North Carolina Wilmington</div>
+
+                <div class="recent">
+                    <span class="tag">Recent · Published</span>
+                    “Beyond News Headlines and TF-IDF: Enhancing Text-Based Forecasting Models with Validated Collocations and Improved Attention,” <span class="venue">International Journal of Forecasting</span> (2025).
+                </div>
+
+                <ul class="profile-links">
+                    <li><a href="https://gabeabeyie.github.io/academic-website/Gabriel_abeyie_cv.pdf" target="_blank" rel="noopener">CV</a></li>
+                    <!-- TODO: replace with your Google Scholar profile URL -->
+                    <li><a href="https://scholar.google.com/" target="_blank" rel="noopener">Scholar</a></li>
+                    <li><a href="https://orcid.org/0009-0005-0006-528X" target="_blank" rel="noopener">ORCID</a></li>
+                    <!-- TODO: replace with your SSRN author page URL -->
+                    <li><a href="https://ssrn.com/" target="_blank" rel="noopener">SSRN</a></li>
+                    <li><a href="https://github.com/gabeabeyie" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/gabrielabeyie" target="_blank" rel="noopener">LinkedIn</a></li>
+                </ul>
             </div>
-            <div class="links">
-                <a href="https://gabeabeyie.github.io/academic-website/Gabriel_abeyie_cv.pdf" target="_blank">CV</a>
-                <a href="https://orcid.org/0009-0005-0006-528X" target="_blank">ORCID</a>
-                <a href="https://github.com/gabeabeyie" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/gabrielabeyie" target="_blank">LinkedIn</a>
-                <a href="https://bsky.app/profile/gabeyie.bsky.social" target="_blank">BlueSky</a>
-            </div>
+
+            <aside class="hero-aside">
+                <img class="portrait" src="GabrielAbeyie-20250510--053.png" alt="Gabriel A. Abeyie">
+                <figure class="sparkline" aria-label="Oil narrative sentiment index, 1953 to 2022">
+                    <svg viewBox="0 0 280 56" xmlns="http://www.w3.org/2000/svg" role="img">
+                        <line class="axis" x1="0" y1="28" x2="280" y2="28"/>
+                        <path class="area" d="M0,28L0.00,26.80L4.06,25.60L8.12,26.80L12.17,22.00L16.23,25.60L20.29,28.00L24.35,29.20L28.41,26.80L32.46,28.00L36.52,26.80L40.58,28.00L44.64,29.20L48.70,28.00L52.75,26.80L56.81,23.68L60.87,26.80L64.93,26.80L68.99,25.60L73.04,24.40L77.10,23.20L81.16,6.88L85.22,10.72L89.28,18.40L93.33,21.28L97.39,22.72L101.45,20.80L105.51,9.28L109.57,8.32L113.62,14.80L117.68,21.28L121.74,25.60L125.80,29.20L129.86,33.28L133.91,44.32L137.97,35.20L142.03,32.32L146.09,29.92L150.14,10.72L154.20,21.28L158.26,26.80L162.32,30.40L166.38,29.20L170.43,28.00L174.49,25.12L178.55,29.92L182.61,40.48L186.67,30.40L190.72,22.72L194.78,26.08L198.84,22.00L202.90,17.92L206.96,17.20L211.01,16.00L215.07,17.20L219.13,14.08L223.19,6.88L227.25,41.92L231.30,29.20L235.36,18.88L239.42,20.80L243.48,23.68L247.54,35.68L251.59,44.32L255.65,40.48L259.71,30.40L263.77,25.12L267.83,26.80L271.88,46.72L275.94,23.20L280.00,10.72L280,28Z"/>
+                        <path class="line" d="M0.00,26.80L4.06,25.60L8.12,26.80L12.17,22.00L16.23,25.60L20.29,28.00L24.35,29.20L28.41,26.80L32.46,28.00L36.52,26.80L40.58,28.00L44.64,29.20L48.70,28.00L52.75,26.80L56.81,23.68L60.87,26.80L64.93,26.80L68.99,25.60L73.04,24.40L77.10,23.20L81.16,6.88L85.22,10.72L89.28,18.40L93.33,21.28L97.39,22.72L101.45,20.80L105.51,9.28L109.57,8.32L113.62,14.80L117.68,21.28L121.74,25.60L125.80,29.20L129.86,33.28L133.91,44.32L137.97,35.20L142.03,32.32L146.09,29.92L150.14,10.72L154.20,21.28L158.26,26.80L162.32,30.40L166.38,29.20L170.43,28.00L174.49,25.12L178.55,29.92L182.61,40.48L186.67,30.40L190.72,22.72L194.78,26.08L198.84,22.00L202.90,17.92L206.96,17.20L211.01,16.00L215.07,17.20L219.13,14.08L223.19,6.88L227.25,41.92L231.30,29.20L235.36,18.88L239.42,20.80L243.48,23.68L247.54,35.68L251.59,44.32L255.65,40.48L259.71,30.40L263.77,25.12L267.83,26.80L271.88,46.72L275.94,23.20L280.00,10.72"/>
+                        <!-- annotation dots at major shocks -->
+                        <circle class="peak" cx="81.16"  cy="6.88"  r="1.4"/>
+                        <circle class="peak" cx="105.51" cy="9.28"  r="1.4"/>
+                        <circle class="peak" cx="133.91" cy="44.32" r="1.4"/>
+                        <circle class="peak" cx="150.14" cy="10.72" r="1.4"/>
+                        <circle class="peak" cx="223.19" cy="6.88"  r="1.4"/>
+                        <circle class="peak" cx="271.88" cy="46.72" r="1.4"/>
+                        <circle class="peak" cx="280.00" cy="10.72" r="1.4"/>
+                    </svg>
+                    <figcaption>
+                        <span class="label">Oil narrative sentiment, 1953–2022</span>
+                        <span>illustrative</span>
+                    </figcaption>
+                </figure>
+            </aside>
         </div>
     </header>
 
-    <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <h2>About</h2>
-            <div class="about-content">
-                <p>I am an Assistant Professor of Economics at the University of North Carolina Wilmington. My research lies at the intersection of macroeconomics and finance, with a focus on how narratives, information, and expectations shape asset prices and macroeconomic outcomes.</p>
-                
-                <p>My work develops and applies text-based measures of economic narratives using large-scale news data, combined with high-frequency identification strategies and econometric methods. I am particularly interested in understanding how markets respond to new information, how expectations are formed, and how these processes are transmitted to the broader economy.</p>
-
-                <p>While many of my applications focus on energy markets (especially oil), my broader research agenda centers on narrative-driven fluctuations, expectation formation, and the role of information in macro-financial dynamics.</p>
+        <div class="shell">
+            <div class="section-head">
+                <span class="num">§ I</span>
+                <h2>About</h2>
             </div>
 
-            <h3>Research Interests</h3>
-            <div class="research-interests">
+            <div class="about-prose">
+                <p>I am an Assistant Professor of Economics at the University of North Carolina Wilmington. My research lies at the intersection of macroeconomics and finance, with a focus on how narratives, information, and expectations shape asset prices and macroeconomic outcomes.</p>
+
+                <p>My work develops and applies text-based measures of economic narratives using large-scale news data, combined with high-frequency identification strategies and structural econometric methods. I am particularly interested in understanding how markets respond to new information, how expectations are formed, and how these processes are transmitted to the broader economy.</p>
+
+                <p>While many of my applications focus on energy markets — especially oil — my broader research agenda centers on narrative-driven fluctuations, expectation formation, and the role of information in macro-financial dynamics.</p>
+            </div>
+
+            <p class="pull-quote">
+                Markets respond not only to what happens, but to <em>how</em> what happens is told.
+            </p>
+
+            <h3 class="subhead">Research Interests</h3>
+            <div class="interests">
                 <span>Macroeconomics</span>
                 <span>Financial Economics</span>
-                <span>Expectations & Information Transmission</span>
+                <span>Expectations &amp; Information Transmission</span>
                 <span>Text-Based / Narrative Economics</span>
+                <span>Energy Markets</span>
             </div>
         </div>
     </section>
 
-        <!-- Research Section -->
     <section id="research">
-        <div class="container">
-            <h2>Research</h2>
+        <div class="shell">
+            <div class="section-head">
+                <span class="num">§ II</span>
+                <h2>Research</h2>
+            </div>
 
-            <h3>Publications</h3>
+            <h3 class="subhead">Publications</h3>
 
-            <div class="publication">
+            <article class="paper featured">
+                <div class="meta">
+                    <span class="status">Featured · Published</span>
+                    <span class="sep">/</span>
+                    <span class="year">2025</span>
+                </div>
                 <h4>Beyond News Headlines and TF-IDF: Enhancing Text-Based Forecasting Models with Validated Collocations and Improved Attention</h4>
-                <div class="authors">Gabriel Appau Abeyie</div>
-                <div class="venue">International Journal of Forecasting</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie</div>
+                <div class="venue"><em>International Journal of Forecasting</em></div>
+                <p class="key-finding">
+                    Reading the full text of news articles — not just headlines — and validating collocations such as “price fell,” “prices tumbled,” and “price dropped,” substantially improves crude-oil price forecasts.
+                </p>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
-                    This paper proposes a method for enhancing text-based forecasting models, with a specific focus on predicting crude oil prices.
-                    Utilizing advanced techniques, including pattern validation and attention mechanisms, the study demonstrates notable improvements
-                    in predictive power over traditional approaches. One key finding is that considering the full text of news articles, rather
-                    than limiting the analysis to news headlines, leads to significant gains in forecasting accuracy. Furthermore, the model featuring
-                    verb-noun and noun-verb collocation pattern validation consistently outperforms benchmarks and models based solely on news
-                    headlines across various forecasting horizons. The results suggest that the presence of such collocations as ’price fell,’ ’prices
-                    tumbled,’ and ’price dropped’ in crude-oil-related news articles is associated with a decrease in oil price returns. Additionally, integrating
-                    macroeconomic data with text-based features enhances predictive performance, demonstrating that combining structured
-                    economic indicators with textual features improves forecasting accuracy.
+                    This paper proposes a method for enhancing text-based forecasting models, with a specific focus on predicting crude oil prices. Utilizing advanced techniques, including pattern validation and attention mechanisms, the study demonstrates notable improvements in predictive power over traditional approaches. One key finding is that considering the full text of news articles, rather than limiting the analysis to news headlines, leads to significant gains in forecasting accuracy. Furthermore, the model featuring verb-noun and noun-verb collocation pattern validation consistently outperforms benchmarks and models based solely on news headlines across various forecasting horizons. The results suggest that the presence of such collocations as “price fell,” “prices tumbled,” and “price dropped” in crude-oil-related news articles is associated with a decrease in oil price returns. Additionally, integrating macroeconomic data with text-based features enhances predictive performance, demonstrating that combining structured economic indicators with textual features improves forecasting accuracy.
                 </div>
                 <div class="links">
-                    <a href="https://doi.org/10.1016/j.ijforecast.2025.09.002" target="_blank">Published Version</a> |
-                    <a href="https://gabeabeyie.github.io/academic-website/IJF-D-24-00300R1.pdf" target="_blank">Working Paper</a>|<a href="https://github.com/gabeabeyie/Collocation_Attention.git" target="_blank">Data and Codes</a>
+                    <a href="https://doi.org/10.1016/j.ijforecast.2025.09.002" target="_blank" rel="noopener">Published version</a>
+                    <span class="sep">·</span>
+                    <a href="https://gabeabeyie.github.io/academic-website/IJF-D-24-00300R1.pdf" target="_blank" rel="noopener">Working paper</a>
+                    <span class="sep">·</span>
+                    <a href="https://github.com/gabeabeyie/Collocation_Attention.git" target="_blank" rel="noopener">Data &amp; code</a>
                 </div>
-            </div>
+            </article>
 
-            <h3>Working Papers</h3>
+            <h3 class="subhead">Working Papers</h3>
 
-            <div class="publication">
+            <article class="paper">
+                <div class="meta">
+                    <span class="status">Working Paper</span>
+                    <span class="sep">/</span>
+                    <span class="year">2026</span>
+                </div>
                 <h4>Not All Oil Narrative Shocks Are Alike: The Macroeconomic Effects of News-Driven Sentiment and Uncertainty Shocks</h4>
-                <div class="authors">Gabriel A. Abeyie</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie</div>
+                <p class="key-finding">
+                    Bullish oil-narrative sentiment shocks transmit through a demand-side information channel; oil-narrative uncertainty shocks transmit through a supply-side real-options channel. When both hit together, the result is stagflationary.
+                </p>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
-                    This paper studies whether oil-market narratives have macroeconomic effects, and whether those effects differ depending on whether narratives convey directional information or uncertainty. I construct new monthly oil narrative sentiment and uncertainty indices from Wall Street Journal and New York Times articles from 1953 to 2022 and classify oil-related coverage into five narrative types. Using the typespecific narrative decomposition as external instruments in a Proxy-SVAR, I identify
-                    two structurally distinct narrative shocks. A bullish narrative sentiment shock raises the real oil price persistently, increases world industrial production, raises world oil production, and gradually passes through to consumer prices, consistent with a demand-side information channel. By contrast, an elevated narrative uncertainty shock reduces world oil production and world industrial production, while producing only a muted response of the real oil price and consumer prices,
-                    consistent with a supply-side real options channel. When both shocks hit simultaneously, the combined effect produces a stagflationary pattern in which oil prices and inflation rise while production and activity respond weakly. These findings show that oil-market narratives contain macroeconomically relevant variation beyond physical oil shocks and that separating directional tone from ambiguity is essential for understanding how oil news transmits to the broader economy.
+                    This paper studies whether oil-market narratives have macroeconomic effects, and whether those effects differ depending on whether narratives convey directional information or uncertainty. I construct new monthly oil narrative sentiment and uncertainty indices from Wall Street Journal and New York Times articles from 1953 to 2022 and classify oil-related coverage into five narrative types. Using the type-specific narrative decomposition as external instruments in a Proxy-SVAR, I identify two structurally distinct narrative shocks. A bullish narrative sentiment shock raises the real oil price persistently, increases world industrial production, raises world oil production, and gradually passes through to consumer prices, consistent with a demand-side information channel. By contrast, an elevated narrative uncertainty shock reduces world oil production and world industrial production, while producing only a muted response of the real oil price and consumer prices, consistent with a supply-side real-options channel. When both shocks hit simultaneously, the combined effect produces a stagflationary pattern in which oil prices and inflation rise while production and activity respond weakly. These findings show that oil-market narratives contain macroeconomically relevant variation beyond physical oil shocks and that separating directional tone from ambiguity is essential for understanding how oil news transmits to the broader economy.
                 </div>
                 <div class="links">
-                    <a href="https://gabeabeyie.github.io/academic-website/Narrative_Shocks70.pdf">Working Paper</a>
+                    <a href="https://gabeabeyie.github.io/academic-website/Narrative_Shocks70.pdf" target="_blank" rel="noopener">Working paper</a>
                 </div>
-            </div>
+            </article>
 
-            <div class="publication">
+            <article class="paper">
+                <div class="meta">
+                    <span class="status">Working Paper</span>
+                    <span class="sep">/</span>
+                    <span class="year">2025</span>
+                </div>
                 <h4>Narrative Risk and the Equity Premium</h4>
-                <div class="authors">Gabriel A. Abeyie, Efua A. Noonoo, Emmanuel Obijole</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie, Efua A. Noonoo, Emmanuel Obijole</div>
+                <p class="key-finding">
+                    Narrative Attention Shrinkage (NAS) — a state-dependent forecast combination that responds to a real-time Narrative Attention Index — delivers significant out-of-sample equity-premium gains, concentrated in crisis episodes.
+                </p>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
-                    We study whether economic narratives improve equity premium forecasts and how forecast combination should adapt to changes in the narrative environment. Using narrative sentiment features extracted from major U.S. newspapers over 1940–2021, we generate machine-learning forecasts via Lasso, Elastic Net, and Random Forest, and combine them using Narrative Attention Shrinkage (NAS). Motivated by rational inattention, NAS uses a real-time Narrative Attention Index (NAI) to modulate
-                    shrinkage: when narrative activity is elevated, weights concentrate on the strongest models; when activity is low, weights revert toward equal averaging. Out of sample, NAS delivers economically and statistically significant gains relative to the historical average and standard combination benchmarks, with improvements concentrated in crisis episodes characterized by heightened narrative activity and model disagreement. These findings provide a state-dependent resolution to the forecast combination puzzle
-                    and show that narrative information is most effectively exploited through adaptive model selection.
+                    We study whether economic narratives improve equity premium forecasts and how forecast combination should adapt to changes in the narrative environment. Using narrative sentiment features extracted from major U.S. newspapers over 1940–2021, we generate machine-learning forecasts via Lasso, Elastic Net, and Random Forest, and combine them using Narrative Attention Shrinkage (NAS). Motivated by rational inattention, NAS uses a real-time Narrative Attention Index (NAI) to modulate shrinkage: when narrative activity is elevated, weights concentrate on the strongest models; when activity is low, weights revert toward equal averaging. Out of sample, NAS delivers economically and statistically significant gains relative to the historical average and standard combination benchmarks, with improvements concentrated in crisis episodes characterized by heightened narrative activity and model disagreement. These findings provide a state-dependent resolution to the forecast combination puzzle and show that narrative information is most effectively exploited through adaptive model selection.
                 </div>
                 <div class="links">
-                    <a href="https://gabeabeyie.github.io/academic-website/main.pdf">Working Paper</a>
+                    <a href="https://gabeabeyie.github.io/academic-website/main.pdf" target="_blank" rel="noopener">Working paper</a>
                 </div>
-            </div>
-            
-            <div class="publication">
-                <h4>When Do Markets React? Heterogeneous Timing in Oil Inventory Announcement Responses</h4>
-                <div class="authors">Gabriel Appau Abeyie</div>
-                <button class="toggle-abstract">Read Abstract</button>
-                <div class="abstract">
-                    Traditional event studies assume that all announcements of a given type generate price reactions at the same speed, justifying fixed event windows. Using high-frequency data on crude oil futures and 612 weekly EIA inventory announcements from 2012-2024, we show this assumption is violated in economically meaningful ways. We develop a two-stage framework that first predicts reaction timing using machine learning, then estimates regime-conditional price impacts. 
-                    Applying an incremental returns method to isolate genuine price reactions from drift, we identify three distinct regimes: FAST (0-30 minutes, 24% of announcements), NORMAL (35-90 minutes, 45%), and SLOW (95+ minutes, 31%). The NORMAL regime achieves highly significant surprise-return relationships. FAST reactions are immediate but statistically insignificant, while SLOW reactions show no systematic response to inventory surprises.
-                    Our two-stage model nearly replicates oracle performance, demonstrating that accounting for heterogeneous timing substantially improves event study measurement. 
-                </div>
-                <div class="links">
-                    <a href="#">Draft Available Upon Request</a>
-                </div>
-            </div>
+            </article>
 
-            <div class="publication">
+            <article class="paper">
+                <div class="meta">
+                    <span class="status">Working Paper</span>
+                    <span class="sep">/</span>
+                    <span class="year">2025</span>
+                </div>
+                <h4>When Do Markets React? Heterogeneous Timing in Oil Inventory Announcement Responses</h4>
+                <div class="byline">Gabriel A. Abeyie</div>
+                <p class="key-finding">
+                    Three distinct reaction regimes — FAST, NORMAL, SLOW — govern how oil futures respond to weekly EIA inventory announcements. Fixed event windows obscure the structure.
+                </p>
+                <button class="toggle-abstract">Read abstract</button>
+                <div class="abstract">
+                    Traditional event studies assume that all announcements of a given type generate price reactions at the same speed, justifying fixed event windows. Using high-frequency data on crude oil futures and 612 weekly EIA inventory announcements from 2012–2024, we show this assumption is violated in economically meaningful ways. We develop a two-stage framework that first predicts reaction timing using machine learning, then estimates regime-conditional price impacts. Applying an incremental returns method to isolate genuine price reactions from drift, we identify three distinct regimes: FAST (0–30 minutes, 24% of announcements), NORMAL (35–90 minutes, 45%), and SLOW (95+ minutes, 31%). The NORMAL regime achieves highly significant surprise–return relationships. FAST reactions are immediate but statistically insignificant, while SLOW reactions show no systematic response to inventory surprises. Our two-stage model nearly replicates oracle performance, demonstrating that accounting for heterogeneous timing substantially improves event study measurement.
+                </div>
+                <div class="links">
+                    <span class="muted">Draft available on request</span>
+                </div>
+            </article>
+
+            <article class="paper">
+                <div class="meta">
+                    <span class="status">Working Paper</span>
+                    <span class="sep">/</span>
+                    <span class="year">2025</span>
+                </div>
                 <h4>Identifying OPEC News Shocks: The Impact of OPEC Announcements Using Textual Data</h4>
-                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
                     This paper uses textual analysis to identify and measure the impact of OPEC news shocks on oil markets and the broader economy, developing novel methods to extract information from OPEC announcements and communications.
                 </div>
                 <div class="links">
-                    <a href="#">Draft Available Upon Request</a>
+                    <span class="muted">Draft available on request</span>
                 </div>
-            </div>
+            </article>
 
-            <h3>Work in Progress</h3>
+            <h3 class="subhead">Work in Progress</h3>
 
-            <div class="publication">
+            <article class="paper">
+                <div class="meta">
+                    <span class="status muted">In Progress</span>
+                </div>
                 <h4>Welfare Implications of Bubble Cycles</h4>
-                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
-                    This research examines the welfare consequences of asset price bubble cycles, analyzing how boom-bust patterns in asset markets affect economic efficiency and social welfare.
+                    This research examines the welfare consequences of asset price bubble cycles, analyzing how boom–bust patterns in asset markets affect economic efficiency and social welfare.
                 </div>
-            </div>
+            </article>
 
-            <div class="publication">
+            <article class="paper">
+                <div class="meta">
+                    <span class="status muted">In Progress</span>
+                </div>
                 <h4>Forecasting Crude Oil Price Returns: A Principal Weighted-Elastic Net (PW-EN) Approach</h4>
-                <div class="authors">Gabriel Appau Abeyie, Andrew Hanson</div>
-                <button class="toggle-abstract">Read Abstract</button>
+                <div class="byline">Gabriel A. Abeyie, Andrew Hanson</div>
+                <button class="toggle-abstract">Read abstract</button>
                 <div class="abstract">
                     This paper develops a novel forecasting methodology combining principal component analysis with weighted elastic net regularization to improve crude oil price return predictions using high-dimensional predictor sets.
                 </div>
-            </div>
+            </article>
         </div>
     </section>
 
-    <!-- Teaching Section -->
     <section id="teaching">
-        <div class="container">
-            <h2>Teaching</h2>
+        <div class="shell">
+            <div class="section-head">
+                <span class="num">§ III</span>
+                <h2>Teaching</h2>
+            </div>
 
-            <h3>Current Courses</h3>
+            <h3 class="subhead">Current &amp; Recent Courses</h3>
 
             <div class="course">
-                <h4>Principles of Macroeconomics</h4>
-                <div class="course-code">ECN 222 | <a href="https://gabeabeyie.github.io/academic-website/ECN 222 Spring 2026 Course Outline Abeyie.pdf" target="_blank">Sample Syllabus</a></div>
-                <p>Introductory macroeconomic theory covering national income determination, monetary and fiscal policy, economic growth, and international trade.</p>
-                
-                <p style="margin-top: 1rem;"><strong>Fall 2025:</strong> Section 004 (43 students) | Section 006 (65 students)<br>
-                <strong>Section 004 Overall Instructor Effectiveness:</strong> 4.81 / 5.0 | <a href="https://gabeabeyie.github.io/academic-website/Principles of Economics-Macro ECN-222-004 (Full Term)- Gabriel Abeyie -.pdf" target="_blank">View Teaching Evaluation</a></p>
-                <strong>Section 006 Overall Instructor Effectiveness:</strong> 4.78 / 5.0 | <a href="https://gabeabeyie.github.io/academic-website/Principles of Economics-Macro ECN-222-006 (Full Term)- Gabriel Abeyie -.pdf" target="_blank">View Teaching Evaluation</a></p>
+                <div class="course-head">
+                    <h4>Principles of Macroeconomics</h4>
+                    <div class="code">ECN 222 · <a href="https://gabeabeyie.github.io/academic-website/ECN%20222%20Spring%202026%20Course%20Outline%20Abeyie.pdf" target="_blank" rel="noopener" class="syllabus-link">Sample syllabus</a></div>
+                </div>
+                <p class="desc">Introductory macroeconomic theory covering national income determination, monetary and fiscal policy, economic growth, and international trade.</p>
 
-                <p style="margin-top: 1rem;"><strong>Spring 2026:</strong> Section 004 (65 students)<br>
-                <strong>Section 004 Evaluation:</strong> [Score] / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+                <div class="term">
+                    <div class="when">Fall 2025</div>
+                    <div class="what">
+                        Section 004 (43 students) — Instructor effectiveness <span class="score">4.81 / 5.0</span> · <a href="https://gabeabeyie.github.io/academic-website/Principles%20of%20Economics-Macro%20ECN-222-004%20(Full%20Term)-%20Gabriel%20Abeyie%20-.pdf" target="_blank" rel="noopener" class="eval-link">Evaluation</a><br>
+                        Section 006 (65 students) — Instructor effectiveness <span class="score">4.78 / 5.0</span> · <a href="https://gabeabeyie.github.io/academic-website/Principles%20of%20Economics-Macro%20ECN-222-006%20(Full%20Term)-%20Gabriel%20Abeyie%20-.pdf" target="_blank" rel="noopener" class="eval-link">Evaluation</a>
+                    </div>
+                </div>
+                <div class="term">
+                    <div class="when">Spring 2026</div>
+                    <div class="what">
+                        Section 004 (65 students) — <span class="pending">Evaluations forthcoming</span>
+                    </div>
+                </div>
             </div>
 
             <div class="course">
-                <h4>Intermediate Macroeconomics</h4>
-                <div class="course-code">ECN 322 | <a href="#" target="_blank">Sample Syllabus</a></div>
-                <p>Advanced treatment of macroeconomic theory, including models of economic growth, business cycles, unemployment, and inflation.</p>
-                
-                <p style="margin-top: 1rem;"><strong>Spring 2026:</strong> Section 001 (41 students)<br>
-                <strong>Evaluation:</strong> On-going / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+                <div class="course-head">
+                    <h4>Intermediate Macroeconomics</h4>
+                    <div class="code">ECN 322</div>
+                </div>
+                <p class="desc">Advanced treatment of macroeconomic theory, including models of economic growth, business cycles, unemployment, and inflation.</p>
+
+                <div class="term">
+                    <div class="when">Spring 2026</div>
+                    <div class="what">
+                        Section 001 (41 students) — <span class="pending">Evaluations forthcoming</span>
+                    </div>
+                </div>
             </div>
 
             <div class="course">
-                <h4>Advanced Open Economy Macroeconomics</h4>
-                <div class="course-code">ECN 432 | <a href="#" target="_blank">Sample Syllabus</a></div>
-                <p>Advanced analysis of international macroeconomic theory, including exchange rate determination, international capital flows, and global policy coordination.</p>
-                
-                <p style="margin-top: 1rem;"><strong>Fall 2026:</strong> Section [XXX] ([XX] students)<br>
-                <strong>Evaluation:</strong> [Score] / 5.0 | <a href="#" target="_blank">View Teaching Evaluation</a></p>
+                <div class="course-head">
+                    <h4>Advanced Open Economy Macroeconomics</h4>
+                    <div class="code">ECN 432</div>
+                </div>
+                <p class="desc">Advanced analysis of international macroeconomic theory, including exchange rate determination, international capital flows, and global policy coordination.</p>
+
+                <div class="term">
+                    <div class="when">Fall 2026</div>
+                    <div class="what">
+                        <span class="pending">Scheduled</span>
+                    </div>
+                </div>
             </div>
 
-            <h3>Teaching Philosophy</h3>
-            <p style="margin-top: 1rem; line-height: 1.8;">
-                I am passionate about making economics accessible and engaging. I strive to help students develop strong analytical thinking skills and apply economic reasoning to real-world issues. My goal is to create an inclusive learning environment where all students can thrive and develop a deep understanding of economic principles.
-            </p>
+            <div class="philosophy">
+                <h3 class="subhead">Teaching Philosophy</h3>
+                <p>I am passionate about making economics accessible and engaging. I strive to help students develop strong analytical thinking skills and apply economic reasoning to real-world issues. My goal is to create an inclusive learning environment where all students can thrive and develop a deep understanding of economic principles.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
+        <div class="shell">
+            <div class="section-head">
+                <span class="num">§ IV</span>
+                <h2>Contact</h2>
+            </div>
+
             <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="icon">📧</div>
-                    <div>
-                        <strong>Email</strong><br>
-                        <a href="/cdn-cgi/l/email-protection#bbdad9dec2d2dedcfbced5d8cc95dedfce"><span class="__cf_email__" data-cfemail="88e9eaedf1e1edefc8fde6ebffa6edecfd">[abeyieg at uncw dot edu]</span></a>
-                    </div>
+                <div class="contact-block">
+                    <div class="label">Email</div>
+                    <div class="value"><a href="mailto:abeyieg@uncw.edu">abeyieg@uncw.edu</a></div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon">📞</div>
-                    <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:910-962-3510">910-962-3510</a>
-                    </div>
+                <div class="contact-block">
+                    <div class="label">Phone</div>
+                    <div class="value"><a href="tel:+19109623510">910-962-3510</a></div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon">🏢</div>
-                    <div>
-                        <strong>Office</strong><br>
+                <div class="contact-block">
+                    <div class="label">Office</div>
+                    <div class="value">
                         Cameron Hall, Room 220-O<br>
-                        <a href="https://uncw.edu/academics/colleges/csb/departments-schools/economics-finance/faculty-staff" target="_blank">Department of Economics & Finance</a><br>
+                        <a href="https://uncw.edu/academics/colleges/csb/departments-schools/economics-finance/faculty-staff" target="_blank" rel="noopener">Department of Economics &amp; Finance</a><br>
                         Cameron School of Business
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon">📍</div>
-                    <div>
-                        <strong>Mailing Address</strong><br>
+                <div class="contact-block">
+                    <div class="label">Mailing Address</div>
+                    <div class="value">
                         UNC Wilmington<br>
                         601 S. College Road<br>
                         Wilmington, NC 28403
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon">🌐</div>
-                    <div>
-                        <strong>Institution</strong><br>
-                        <a href="https://uncw.edu/" target="_blank">University of North Carolina Wilmington</a>
+                <div class="contact-block">
+                    <div class="label">Office Hours</div>
+                    <div class="value">
+                        By appointment<br>
+                        <a href="https://outlook.office.com/bookwithme/user/a2c13af445914cb9972d53c73ecf5f0d@uncw.edu?anonymous&amp;ismsaljsauthenabled&amp;ep=bwmEmailSignature" target="_blank" rel="noopener">Schedule online</a>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <div class="icon">🕐</div>
-                    <div>
-                        <strong>Office Hours</strong><br>
-                        By appointment<br>
-                        <a href="https://outlook.office.com/bookwithme/user/a2c13af445914cb9972d53c73ecf5f0d@uncw.edu?anonymous&ismsaljsauthenabled&ep=bwmEmailSignature">Email to schedule</a>
+                <div class="contact-block">
+                    <div class="label">Elsewhere</div>
+                    <div class="value">
+                        <a href="https://bsky.app/profile/gabeyie.bsky.social" target="_blank" rel="noopener">BlueSky</a> · <a href="https://uncw.edu/" target="_blank" rel="noopener">UNCW</a>
                     </div>
-                        </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Gabriel Appau Abeyie | Last updated: December 2025</p>
+        <span class="rule"></span>
+        © 2025–2026 Gabriel A. Abeyie · Last updated May 2026
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Hamburger Menu Toggle
+    <script>
+        // Hamburger menu
         const hamburger = document.getElementById('hamburger');
         const navMenu = document.getElementById('navMenu');
         const navLinks = document.querySelectorAll('.nav-link');
@@ -747,7 +1119,6 @@
             navMenu.classList.toggle('active');
         });
 
-        // Close menu when clicking on a link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -755,31 +1126,20 @@
             });
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                                hamburger.classList.remove('active');
+                hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             }
         });
 
-        // Collapsible Abstracts
-        const toggleButtons = document.querySelectorAll('.toggle-abstract');
-        
-        toggleButtons.forEach(button => {
+        // Collapsible abstracts
+        document.querySelectorAll('.toggle-abstract').forEach(button => {
             button.addEventListener('click', () => {
                 const abstract = button.nextElementSibling;
-                const isExpanded = abstract.classList.contains('expanded');
-                
-                if (isExpanded) {
-                    abstract.classList.remove('expanded');
-                    button.classList.remove('expanded');
-                    button.textContent = 'Read Abstract';
-                } else {
-                    abstract.classList.add('expanded');
-                    button.classList.add('expanded');
-                    button.textContent = 'Hide Abstract';
-                }
+                const expanded = abstract.classList.toggle('expanded');
+                button.classList.toggle('expanded', expanded);
+                button.textContent = expanded ? 'Hide abstract' : 'Read abstract';
             });
         });
     </script>
